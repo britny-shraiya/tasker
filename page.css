@@ -1,0 +1,62 @@
+.page{
+    display: flex;
+    gap:100px;
+    margin-left: 150px;
+    /* margin-top: 200px; */
+}
+.img1{
+    margin-top: 130px;
+}
+.welcome{
+    margin-top: 150px;
+    align-items: center;
+    justify-content: center;
+}
+.please{
+    color: rgb(143, 141, 141);
+    font-size: 20px;
+}
+#email{
+    width:500px;
+    height:50px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#password{
+    width:500px;
+    height:50px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.emailp{
+    font-weight:bold;
+    font-size: 20px;
+}
+#remember{
+    width:20px;
+    height:20px;
+    margin: 10px;
+}
+.rem{
+    color: rgb(143, 141, 141);
+    font-size: 20px;
+   
+}
+#sign{
+    width: 500px;
+    height:50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: blueviolet;
+    color:white;
+    border: none;
+
+}
+.account{
+    font-size: 20px;
+    color: rgb(143, 141, 141);
+}
+b{
+    color:blueviolet
+}

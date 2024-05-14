@@ -1,0 +1,108 @@
+.taskbox{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.fa-folder {
+    margin-right: 5px;
+}
+
+.cat {
+    background-color: white;
+    color:black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    width: 120px;
+}
+
+.dropdown_content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown_content ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown_content ul li a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+img{
+    width:200px;
+    height:200px;
+}
+
+.box1{
+    width: 300px;
+    height:100vh;
+    padding-left: 30px;
+}
+#icons{
+    padding-top: 50px;
+}
+#logout{
+    padding-top: 250px;
+}
+.page1{
+    display:flex;
+
+}
+.buttonbox{
+    display: flex;
+    align-items: center;
+    gap:500px;
+}
+button{
+    width:100px;
+    height:20px;
+}
+.all{
+    gap:30px;
+    display: flex;
+}
+.box2{
+    background-color: azure;
+    width:1300px;
+    margin: 0;
+    padding: 0%;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+h1{
+    text-align: center;
+}
+.task{
+    font-size:30px;
+}
+#additembtn{
+    width:1000px;
+    height:50px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+/* .items{
+    width:1000px;
+    height:50px;
+    background-color: rgb(250, 248, 248);
+    border-radius: 10px;
+    font-size: 20px;
+} */
+}
