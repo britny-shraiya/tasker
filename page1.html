@@ -50,18 +50,31 @@
             <div class="buttonbox">
                 <p class="task">Tasks</p>
                 <div class="all" >
-                  <button>All</button>
-                  <button>Done</button>
-                  <button>Not done</button>
+                  <button class="button1" id ="all">All</button>
+                  <button class="button1" id="done" >Done</button>
+                  <button class="button1" id="notdone" >Not done</button>
                   <i class="fa fa-filter" aria-hidden="true"></i>
                 </div>
             </div>
-            <div class="items">
-                
-            </div>
-            <button id="additembtn" onclick="addItem()"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add a task</button>
-        </div>
+            
+
+  <div class="items"></div>
+
+  
+  <div id="dialog" style="display: none;">
+    <label for="itemName" class="insert" > Insert Name:</label><br>
+    <input type="text" id="itemName"><br>
+    <label for="itemCategory" class="insert"> Category:</label><br>
+    <input type="text" id="itemCategory"><br>
+    <div>
+        <button id="cancelBtn">Cancel</button>
+        <button id="submitBtn">Add</button>
     </div>
-    <script src="./page1.js"></script>
+    
+        </div>
+        
+        <button id="additembtn">Add Item</button>
+    </div>
+    <script src="./local.js"></script>
 </body>
 </html>

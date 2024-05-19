@@ -23,8 +23,29 @@
                 <label for="remember" class="rem"> Remember me</label>
             </div>
             <button id="sign"> Sign in </button>
-            <p class="account">Don't have an account ?<b>Sign Up</b></p>
+            <p class="account">Don't have an account ?<a href="./page2.html"><b>Sign Up</b></a></p>
         </div>
     </div>
+    <script>
+         function signin() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var user_details = JSON.parse(localStorage.getItem("users") || "[]");
+            var user = user_details.find((v) => v.email === email && v.password === password);
+
+            if (user) {
+                alert("Sign in successful");
+                
+            } else {
+                if (!user_details.some((v) => v.email === email)) {
+                    document.getElementById("emailOp").innerHTML = "*Email not found";
+                } else {
+                    document.getElementById("emailOp").innerHTML = "";
+                    document.getElementById("passOp").innerHTML = "*Incorrect password";
+                }
+            }
+        }
+    </script>
 </body>
 </html>

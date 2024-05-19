@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasker</title>
+    <link rel="stylesheet" href="./page1.css">
+</head>
+<body>
+    <div class="whole-container-signup">
+        <div class="card-signup" style=" background-color: #ffffff; ">
+            <p class="heading" style="text-align: center; font-size: 25px; margin-top: 30px;">Sign Up</p>
+            <div class="form">
+                <label for="name" class="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your Name">
+                <p id="nameop"></p>
+                <label for="email"class="name"  >Email</label>
+                <input type="email" id="email" placeholder="Enter your Email">
+                <p id="emailop"></p>
+                <label for="password"class="name">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <p id="passop"></p>
+            </div>
+            <div class="center">
+                <button class="submit-btn" style="margin-top:20px;" onclick="signup()">Sign Up<a href="./page1.html"></a></button>
+            </div>
+            <!-- <p class="center" style="margin-top: 10px;">Do not have an account?<a href="./signin.html">Sign Up</span></p> -->
+        </div>
+    </div>
+    <script>
+        // function signup(){
+        //     var name = document.getElementById("name").value;
+        //     var email = document.getElementById("email").value;
+        //     var password = document.getElementById("password").value;
+
+        //     if(name == ""){
+        //         document.getElementById("nameop").innerHTML = "*Username can't be empty";
+        //     }
+        //     if(email == ""){
+        //         document.getElementById("emailop").innerHTML = "*Enter a valid email";
+        //     }
+        //     if(password == ""){
+        //         document.getElementById("passop").innerHTML = "*Password can't be empty";
+        //     }
+        //     if(name != "" || email != "" || password != ""){
+        //         var user_details = new Array();
+        //         user_details = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
+        //         if(user_details.some((v)=>  v.email == email
+        //     )){
+        //         alert("User already exsists");
+        //     }
+        //         else{
+        //             user_details.push({
+        //                 "name": name,
+        //                 "email": email,
+        //                 "password": password 
+        //             })
+        //             localStorage.setItem("users", JSON.stringify(user_details))
+        //         }
+        //         }
+        // }
+        function signup() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // Regular expressions for validation
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (name == "") {
+        document.getElementById("nameop").innerHTML = "*Username can't be empty";
+        return;
+    } else {
+        document.getElementById("nameop").innerHTML = "";
+    }
+
+    if (email == "" || !emailPattern.test(email)) {
+        document.getElementById("emailop").innerHTML = "*Email should be valid";
+        return;
+    } else {
+        document.getElementById("emailop").innerHTML = "";
+    }
+
+    if (password == "" || !passwordPattern.test(password)) {
+        document.getElementById("passop").innerHTML = "*Password should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one symbol";
+        return;
+    } else {
+        document.getElementById("passop").innerHTML = "";
+    }
+
+    var user_details = JSON.parse(localStorage.getItem("users") || "[]");
+    if (user_details.some((v) => v.email == email)) {
+        document.getElementById("emailop").innerHTML = "*Email already exists";
+        return;
+    }
+
+    user_details.push({
+        name: name,
+        email: email,
+        password: password
+    });
+
+    localStorage.setItem("users", JSON.stringify(user_details));
+
+    alert("User signed up successfully");
+}
+
+    </script>
+</body>
+</html>
